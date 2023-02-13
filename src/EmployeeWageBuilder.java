@@ -60,6 +60,7 @@ public class EmployeeWageBuilder implements IComputeEmpWage{
         empWageBuilder.addCompanies("Reliance", 10, 20, 50);
         empWageBuilder.addCompanies("Jio", 10, 20, 50);
        empWageBuilder.computeWage();
+       //getting the company wise total wage
         System.out.println("Total Wage for Reliance "+ empWageBuilder.getTotalWage("Reliance"));
     }
 }
