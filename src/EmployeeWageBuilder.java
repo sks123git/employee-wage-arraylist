@@ -2,9 +2,19 @@ public class EmployeeWageBuilder {
     public static final int IS_FULL_TIME = 1;
     public static final int IS_PART_TIME = 2;
 
-    public static int computeWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+    private String company;
+    private int empRatePerHour;
+    private int numOfWorkingDays;
+    private int maxHoursPerMonth;
+    private int totalEmpWage;
 
-    {
+    public EmployeeWageBuilder(String company,int empRatePerHour, int numOfWorkingDays,int maxHoursPerMonth){
+    this.company=company;
+    this.empRatePerHour=empRatePerHour;
+    this.numOfWorkingDays=numOfWorkingDays;
+    this.maxHoursPerMonth=maxHoursPerMonth;
+    }
+    public void computeWage() {
         int empHrs = 0;
         int totalEmpHours = 0;
         int totalWorkingDays = 0;
@@ -25,13 +35,20 @@ public class EmployeeWageBuilder {
             totalEmpHours += empHrs;
             System.out.println("Day#: " + totalWorkingDays + " Emp hrs: " + totalEmpHours);
         }
-        int totalEmpWage = totalEmpHours * empRatePerHour;
-        System.out.println("Total wage for company: "+ company + " is " + totalEmpWage);
-        return totalEmpWage;
+       totalEmpWage = totalEmpHours * empRatePerHour;
+    }
+        @Override
+                public String toString(){
+        return  "Total wage for company: "+ company + " is " + totalEmpWage;
     }
 
+
     public static void main(String[] args) {
-        computeWage("Reliance", 20, 20, 100);
-        computeWage("Croma", 30, 20, 50);
+        EmployeeWageBuilder reliance = new EmployeeWageBuilder("Reliance", 20, 20, 100);
+        EmployeeWageBuilder croma = new EmployeeWageBuilder("Croma", 30, 20, 50);
+        reliance.computeWage();
+        System.out.println(reliance);
+        croma.computeWage();
+        System.out.println(croma);
     }
 }
