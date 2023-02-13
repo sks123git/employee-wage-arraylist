@@ -13,12 +13,13 @@ public class EmployeeWageBuilder implements IComputeEmpWage{
     public EmployeeWageBuilder(){
         companyWageList = new LinkedList<>();
         companyToEmpWageMap = new HashMap<>();
-    }
+    }//Storing daily wages
     public void  addCompanies(String company,int empRatePerHour, int numOfWorkingDays,int maxHoursPerMonth){
         CompanyEmpWage companyEmpWage = new CompanyEmpWage(company,empRatePerHour,numOfWorkingDays,maxHoursPerMonth);
         companyWageList.add(companyEmpWage);
         companyToEmpWageMap.put(company,companyEmpWage);
     }
+    //computing total employee wage
     public void computeWage(){
         for (int i = 0; i < companyWageList.size(); i++) {
             CompanyEmpWage companyEmpWage = companyWageList.get(i);
