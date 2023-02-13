@@ -9,7 +9,7 @@ public class EmployeeWageBuilder {
         double empCheck =Math.floor(Math.random() * 10) % 3;
         if(empCheck == IS_FULL_TIME)
             empHrs=8;
-        else if(empCheck == IS_FULL_TIME)
+        else if(empCheck == IS_PART_TIME)
             empHrs=4;
         else
             empHrs=0;
