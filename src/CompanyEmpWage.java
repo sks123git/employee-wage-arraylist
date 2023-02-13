@@ -9,8 +9,8 @@ public class CompanyEmpWage {
         this.empRatePerHour=empRatePerHour;
         this.numOfWorkingDays=numOfWorkingDays;
         this.maxHoursPerMonth=maxHoursPerMonth;
+        totalEmpWage=0;
     }
-
     public void setTotalEmpWage(int totalEmpWage){
         this.totalEmpWage=totalEmpWage;
     }
